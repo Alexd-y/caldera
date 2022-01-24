@@ -1524,7 +1524,7 @@
                     this.selectedLinkResults = null;
                 } else {
                     apiV2('GET', `${this.ENDPOINT}/${this.selectedOperationID}/links/${link.id}/result`).then((res) => {
-                        this.selectedLinkResults = b64DecodeUnicode(res.result);
+                        this.selectedLinkResults = b64DecodeUnicode(JSON.stringify(res.result));
                     }).catch(() => console.error('Error getting link results.'));
                 }
             },
